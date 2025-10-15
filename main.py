@@ -1,3 +1,18 @@
+from Funktioner import *
+
+def main():
+    root = tk.Tk()
+    root.withdraw()  # Hide the main window
+    deltagerliste = import_deltagerliste("Hent deltagerliste")
+    postoversigt = import_postoversigt("Hent postoversigt")
+    if deltagerliste is not None or postoversigt is not None:
+        print("Kører de andre scripts")
+    else:
+        print("Fejl i excel import")
+        
+if __name__ == "__main__":
+    main()
+
 '''
 Todo:
 -Lave preamble for hver type side
