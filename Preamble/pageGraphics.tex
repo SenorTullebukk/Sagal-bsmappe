@@ -1,0 +1,30 @@
+% Mål og afstande er blevet målt fra skabelon fra Drev.
+
+\setlength{\headheight}{20mm}   % Header thickness
+\setlength{\headsep}{8mm}       % Seperation distance to text
+
+% Using fancy headers and clearing default settings
+\pagestyle{fancy}
+\fancyhf{}
+
+% Removing default ruler
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% All graphics are drawn as a header to easily apply to all pages. Could it be done differently? Yes. Does this method work? yes. Is it therefore stupid? No.
+\fancyhead[C]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        % Colored bar
+        \fill[natblå]
+            (current page.north west) rectangle ([yshift=-\headheight]current page.north east);
+
+        % Logo
+        \node[anchor=east,inner sep=10mm]
+            at ([yshift=-\headheight,yshift=-5mm]current page.north east) {\includegraphics[height=40mm]{SagalogoMedDato.png}};
+
+                % Økse
+        \node[opacity=0.15, rotate=10]
+            at ([yshift=-20mm]current page.center)
+            {\includegraphics[height=24cm]{sagaøkse.png}};
+    \end{tikzpicture}%
+}
