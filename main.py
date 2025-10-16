@@ -7,6 +7,8 @@ def main():
     postoversigt = import_postoversigt("Hent postoversigt")
     if deltagerliste is not None or postoversigt is not None:
         lav_pdf(deltagerliste, postoversigt)
+        while hent_pdf() != 1:
+            time.sleep(5)
     else:
         print("Fejl i excel import")
         
