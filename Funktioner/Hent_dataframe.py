@@ -7,6 +7,7 @@ def import_deltagerliste(title):
     )
     if file_path:
         df = pd.read_excel(file_path)
+        #Der skal også her laves lidt behandling af dataframen
         return df
     else:
         return None
@@ -18,6 +19,7 @@ def import_postoversigt(title):
     )
     if file_path:
         df = pd.read_excel(file_path)
+        #Der skal også her laves lidt behandling af dataframen
         return df
     else:
         return None
